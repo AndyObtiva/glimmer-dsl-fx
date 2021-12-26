@@ -67,7 +67,10 @@ module Glimmer
       # Follows the Proxy Design Pattern
       class AppProxy < ControlProxy
         def run
-          create
+          unless @created
+            create
+            @created = true
+          end
           super
         end
         

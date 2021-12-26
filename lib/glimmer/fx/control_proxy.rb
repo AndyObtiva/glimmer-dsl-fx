@@ -64,20 +64,22 @@ module Glimmer
     # Follows the Proxy Design Pattern
     class ControlProxy
       class << self
+        attr_accessor :app_proxy
+        
         def exists?(keyword)
           ::Fox.const_get(fx_constant_symbol(keyword)) ||
             control_proxy_class(keyword)
         end
         
         def create(keyword, parent, args, &block)
-          control_proxy_class(keyword).new(keyword, parent, args, &block)
+          return app_proxy if keyword == 'app' && app_proxy
+          control_proxy_class(keyword).new(keyword, parent, args, &block).tap do |instance|
+            self.app_proxy = instance if keyword == 'app'
+          end
         end
         
         def control_proxy_class(keyword)
           descendant_keyword_constant_map[keyword] || ControlProxy
-        end
-        
-        def new_control(keyword, args)
         end
         
         def constant_symbol(keyword)

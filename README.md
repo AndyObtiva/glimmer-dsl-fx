@@ -3,9 +3,9 @@
 [![Gem Version](https://badge.fury.io/rb/glimmer-dsl-fx.svg)](http://badge.fury.io/rb/glimmer-dsl-fx)
 [![Join the chat at https://gitter.im/AndyObtiva/glimmer](https://badges.gitter.im/AndyObtiva/glimmer.svg)](https://gitter.im/AndyObtiva/glimmer?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-[Glimmer](https://github.com/AndyObtiva/glimmer) DSL for [FX](http://www.fox-toolkit.org/) enables building desktop applications using the [FOX Toolkit](http://www.fox-toolkit.org/) with [FXRuby](https://github.com/larskanis/fxruby).
+[Glimmer](https://github.com/AndyObtiva/glimmer) DSL for [FX](http://www.fox-toolkit.org/) enables building desktop applications using the [FOX Toolkit](http://www.fox-toolkit.org/) via [FXRuby](https://github.com/larskanis/fxruby).
 
-[FOX Toolkit](http://www.fox-toolkit.org/) is the most popular cross-platform desktop GUI toolkit in [Ruby](https://www.ruby-lang.org/) having 900k+ [fxruby gem](https://rubygems.org/gems/fxruby) downloads and counting!
+[FOX Toolkit](http://www.fox-toolkit.org/) is the most popular cross-platform desktop GUI toolkit in [Ruby](https://www.ruby-lang.org/), having [900k+ FXRuby gem downloads](https://rubygems.org/gems/fxruby) and counting!
 
 [Glimmer DSL for FX](https://rubygems.org/gems/glimmer-dsl-fx) aims to supercharge productivity and maintainability in developing [FOX Toolkit Ruby](https://rubygems.org/gems/fxruby) applications by providing a DSL similar to [Glimmer DSL for SWT](https://github.com/AndyObtiva/glimmer-dsl-swt) having:
 - Declarative DSL syntax that visually maps to the GUI widget hierarchy
@@ -122,9 +122,9 @@ The Glimmer GUI DSL enables development of desktop graphical user interfaces in 
 
 1 - Keywords
 
-Always start with `application`.
+Always start with `app`.
 
-Inside `application`, nest `window`, and inside `window`, you may declare any [FOX Toolkit control](http://www.fox-toolkit.org/ref16/classes.html) with its keyword, which is the underscored version of the class name minus the `FX` prefix. For example, `label` is the keyword for [`FXLabel`](http://www.fox-toolkit.org/ref16/classFX_1_1FXLabel.html)
+Inside `app`, nest `main_window`, and inside `main_window`, you may declare any [FOX Toolkit control](http://www.fox-toolkit.org/ref16/classes.html) with its keyword, which is the underscored version of the class name minus the `FX` prefix. For example, `label` is the keyword for [`FXLabel`](http://www.fox-toolkit.org/ref16/classFX_1_1FXLabel.html)
 
 Examples:
 
@@ -261,7 +261,9 @@ HelloButton.new.launch
 
 ## Smart Defaults and Conventions
 
-- `application` automatically shows `window` upon calling `run` while staring the main event loop.
+- `app` automatically shows `main_window` upon calling `run` while staring the main event loop.
+- `app` automatically invokes `open -a /Applications/Utilities/XQuartz.app` upon running on Mac.
+- Declaring `app` multiple times always returns the first `app` created ([FOX Toolkit](http://www.fox-toolkit.org/) does not support multiple `app` instances)
 
 ## Girb (Glimmer IRB)
 
@@ -275,7 +277,9 @@ girb
 
 This gives you `irb` with the `glimmer-dsl-fx` gem loaded and the `Glimmer` module mixed into the main object for easy experimentation with GUI.
 
-Gotcha: On the Mac, when you close a window opened in `girb`, it remains open until you enter exit or open another GUI window.
+Note: GIRB for Glimmer DSL for FX 0.0.1 is still very rudimentary and does not support entering code for multiple applications, yet only one. You would have to exit and re-enter after each application entered.
+
+Gotcha: On the Mac, when you close a window opened in `girb`, it remains open until you enter `exit`.
 
 ## Samples
 
