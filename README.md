@@ -3,7 +3,7 @@
 [![Gem Version](https://badge.fury.io/rb/glimmer-dsl-fx.svg)](http://badge.fury.io/rb/glimmer-dsl-fx)
 [![Join the chat at https://gitter.im/AndyObtiva/glimmer](https://badges.gitter.im/AndyObtiva/glimmer.svg)](https://gitter.im/AndyObtiva/glimmer?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-[Glimmer](https://github.com/AndyObtiva/glimmer) DSL for [FX](http://www.fox-toolkit.org/) enables building desktop applications using the [FOX Toolkit](http://www.fox-toolkit.org/) via [FXRuby](https://github.com/larskanis/fxruby).
+[Glimmer](https://github.com/AndyObtiva/glimmer) DSL for [FX](http://www.fox-toolkit.org/) enables building desktop applications with the [FOX Toolkit](http://www.fox-toolkit.org/) via [FXRuby](https://github.com/larskanis/fxruby).
 
 [FOX Toolkit](http://www.fox-toolkit.org/) is the most popular cross-platform desktop GUI toolkit in [Ruby](https://www.ruby-lang.org/), having [900k+ FXRuby gem downloads](https://rubygems.org/gems/fxruby) and counting!
 
@@ -201,8 +201,20 @@ When utilizing the Glimmer GUI DSL, you get back proxy objects that wrap [FOX To
 Furthermore, you may invoke any method available on the control indirectly on the proxy object, like the `#text` method on `label`.
 
 ```ruby
-label1 = label('Full Name')
-label1.text # same as label1.fx.text
+label1 = nil
+app('HelloWorld', 'Glimmer') {
+  main_window('Hello, World!') {
+    label1 = label('Full Name')
+  }
+}
+puts label1.text # prints: Full Name
+puts label1.fx.text # prints: Full Name
+label1.text = 'Name'
+puts label1.text # prints: Name
+puts label1.fx.text # prints: Name
+label1.fx.text = 'Whole Name'
+puts label1.text # prints: Whole Name
+puts label1.fx.text # prints: Whole Name
 ```
 
 6 - Observe Model Attributes
