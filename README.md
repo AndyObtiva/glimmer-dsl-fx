@@ -1,4 +1,4 @@
-# [<img src="https://raw.githubusercontent.com/AndyObtiva/glimmer/master/images/glimmer-logo-hi-res.png" height=85 />](https://github.com/AndyObtiva/glimmer) Glimmer DSL for FX 0.0.1
+# [<img src="https://raw.githubusercontent.com/AndyObtiva/glimmer/master/images/glimmer-logo-hi-res.png" height=85 />](https://github.com/AndyObtiva/glimmer) Glimmer DSL for FX 0.0.2
 ## FOX Toolkit Ruby Desktop Development GUI Library
 [![Gem Version](https://badge.fury.io/rb/glimmer-dsl-fx.svg)](http://badge.fury.io/rb/glimmer-dsl-fx)
 [![Join the chat at https://gitter.im/AndyObtiva/glimmer](https://badges.gitter.im/AndyObtiva/glimmer.svg)](https://gitter.im/AndyObtiva/glimmer?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
@@ -21,7 +21,7 @@ Hello, World!
 ```ruby
 app('HelloWorld', 'Glimmer') {
   main_window('Hello, World!') {
-    label('Hello, World!')
+    label('Hello, World!', opts: [:layout_center_x, :layout_center_y])
   }
 }.run
 ```
@@ -76,7 +76,7 @@ gem install glimmer-dsl-fx
 
 Add the following to `Gemfile`:
 ```
-gem 'glimmer-dsl-fx', '~> 0.0.1'
+gem 'glimmer-dsl-fx', '~> 0.0.2'
 ```
 
 And, then run:
@@ -91,7 +91,7 @@ Require the library and mixin the `Glimmer` module to utilize the Glimmer GUI DS
 ```ruby
 app('HelloWorld', 'Glimmer') {
   main_window('Hello, World!') {
-    label('Hello, World!')
+    label('Hello, World!', opts: [:layout_center_x, :layout_center_y])
   }
 }.run
 ```
@@ -107,7 +107,7 @@ class SomeGlimmerApplication
   def launch
     app('HelloWorld', 'Glimmer') {
       main_window('Hello, World!') {
-        label('Hello, World!')
+        label('Hello, World!', opts: [:layout_center_x, :layout_center_y])
       }
     }.run
   end
@@ -256,7 +256,7 @@ class HelloButton
   def launch
     app('HelloButton', 'Glimmer') {
       main_window('Hello, Button!') {
-        @button = button('Click To Increment: 0') {
+        @button = button('Click To Increment: 0', opts: [:frame_raised, :frame_thick, :layout_center_x, :layout_center_y]) {
           on(:command) do
             @counter.count += 1
           end
@@ -289,7 +289,7 @@ girb
 
 This gives you `irb` with the `glimmer-dsl-fx` gem loaded and the `Glimmer` module mixed into the main object for easy experimentation with GUI.
 
-Note: GIRB for Glimmer DSL for FX 0.0.1 is still very rudimentary and does not support entering code for multiple applications, yet only one. You would have to exit and re-enter after each application entered.
+Note: GIRB for Glimmer DSL for FX 0.0.2 is still very rudimentary and does not support entering code for multiple applications, yet only one. You would have to exit and re-enter after each application entered.
 
 Gotcha: On the Mac, when you close a window opened in `girb`, it remains open until you enter `exit`.
 
@@ -364,7 +364,7 @@ class HelloButton
   def launch
     app('HelloButton', 'Glimmer') {
       main_window('Hello, Button!') {
-        @button = button("Click To Increment: 0") {
+        @button = button("Click To Increment: 0", opts: [:frame_raised, :frame_thick, :layout_center_x, :layout_center_y]) {
           on(:command) do
             @count += 1
             @button.text = "Click To Increment: #{@count}"

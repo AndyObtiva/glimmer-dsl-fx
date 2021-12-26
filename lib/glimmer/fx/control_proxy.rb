@@ -165,9 +165,7 @@ module Glimmer
       
       def window_proxy
         found_proxy = self
-        until found_proxy.nil? || found_proxy.is_a?(WindowProxy)
-          found_proxy = found_proxy.parent_proxy
-        end
+        found_proxy = found_proxy.parent_proxy until found_proxy.nil? || found_proxy.is_a?(WindowProxy)
         found_proxy
       end
 
@@ -208,9 +206,16 @@ module Glimmer
       end
       
       def normalize_args(args)
-        args.map do |arg|
+        result_args = args.map do |arg|
           arg.is_a?(ControlProxy) ? arg.fx : arg
         end
+        kwargs = result_args.last.is_a?(Hash) ? result_args.pop : {}
+        opts = [kwargs.delete(:opts) || kwargs.delete('opts')].flatten.compact
+        opts_value = opts.map do |opt|
+          ::Fox.const_get(opt.upcase.to_sym)
+        end.reduce(:|)
+        kwargs = kwargs.merge(opts: opts_value) unless opts.empty?
+        kwargs.empty? ? result_args : result_args + [kwargs]
       end
     end
   end
