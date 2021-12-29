@@ -5,7 +5,9 @@
 
 [Glimmer](https://github.com/AndyObtiva/glimmer) DSL for [FX](http://www.fox-toolkit.org/) enables building desktop applications with the [FOX Toolkit](http://www.fox-toolkit.org/) via [FXRuby](https://github.com/larskanis/fxruby).
 
-[FOX Toolkit](http://www.fox-toolkit.org/) is the most popular cross-platform desktop GUI toolkit in [Ruby](https://www.ruby-lang.org/), having [900k+ FXRuby gem downloads](https://rubygems.org/gems/fxruby) and counting!
+[FOX Toolkit](http://www.fox-toolkit.org/) is the most popular cross-platform desktop GUI toolkit in [Ruby](https://www.ruby-lang.org/), having [900k+ FXRuby gem downloads](https://rubygems.org/gems/fxruby) and counting! 
+
+[FOX Toolkit](http://www.fox-toolkit.org/)'s forte is definitely Windows where no prerequisites are needed given that [FXRuby](https://github.com/larskanis/fxruby) includes Windows binaries out of the box.
 
 [Glimmer DSL for FX](https://rubygems.org/gems/glimmer-dsl-fx) aims to supercharge productivity and maintainability in developing [FOX Toolkit Ruby](https://rubygems.org/gems/fxruby) applications by providing a DSL similar to [Glimmer DSL for SWT](https://github.com/AndyObtiva/glimmer-dsl-swt) having:
 - Declarative DSL syntax that visually maps to the GUI widget hierarchy
@@ -26,15 +28,17 @@ app('HelloWorld', 'Glimmer') {
 }.run
 ```
 
-![hello world screenshot mac](/screenshots/glimmer-dsl-fx-mac-hello-world.png)
+Windows | Mac
+--------|----
+![hello world screenshot windows](/screenshots/glimmer-dsl-fx-windows-hello-world.png) | ![hello world screenshot mac](/screenshots/glimmer-dsl-fx-mac-hello-world.png)
 
-NOTE: Glimmer DSL for FX is currently in early alpha mode (incomplete proof-of-concept). Please help make better by contributing, adopting for small or low risk projects, and providing feedback. It is still an early alpha, so the more feedback and issues you report the better.
+NOTE: Glimmer DSL for FX is currently in early alpha mode (incomplete proof-of-concept). If you want it developed faster, then [open an issue report](https://github.com/AndyObtiva/glimmer-dsl-fx/issues/new). I have completed some GitHub project features much faster before due to [issue reports](https://github.com/AndyObtiva/glimmer-dsl-fx/issues) and [pull requests](https://github.com/AndyObtiva/glimmer-dsl-fx/pulls). Please help make better by contributing, adopting for small or low risk projects, and providing feedback. It is still an early alpha, so the more feedback and issues you report the better.Please help make better by contributing, adopting for small or low risk projects, and providing feedback. It is still an early alpha, so the more feedback and issues you report the better.
 
 Other [Glimmer](https://rubygems.org/gems/glimmer) DSL gems you might be interested in:
 - [glimmer-dsl-swt](https://github.com/AndyObtiva/glimmer-dsl-swt): Glimmer DSL for SWT (JRuby Desktop Development GUI Framework)
 - [glimmer-dsl-opal](https://github.com/AndyObtiva/glimmer-dsl-opal): Glimmer DSL for Opal (Pure Ruby Web GUI and Auto-Webifier of Desktop Apps)
+- [glimmer-dsl-libui](https://github.com/AndyObtiva/glimmer-dsl-libui): Glimmer DSL for LibUI (Prerequisite-Free Ruby Desktop Development GUI Library)
 - [glimmer-dsl-tk](https://github.com/AndyObtiva/glimmer-dsl-tk): Glimmer DSL for Tk (MRI Ruby Desktop Development GUI Library)
-- [glimmer-dsl-libui](https://github.com/AndyObtiva/glimmer-dsl-libui): Glimmer DSL for Tk (Prerequisite-Free Ruby Desktop Development GUI Library)
 - [glimmer-dsl-xml](https://github.com/AndyObtiva/glimmer-dsl-xml): Glimmer DSL for XML (& HTML)
 - [glimmer-dsl-css](https://github.com/AndyObtiva/glimmer-dsl-css): Glimmer DSL for CSS
 
@@ -269,7 +273,9 @@ end
 HelloButton.new.launch
 ```
 
-![screenshots/glimmer-dsl-fx-mac-hello-button.png](screenshots/glimmer-dsl-fx-mac-hello-button.png)
+Windows | Mac
+--------|----
+![screenshots/glimmer-dsl-fx-windows-hello-button.png](screenshots/glimmer-dsl-fx-windows-hello-button.png) | ![screenshots/glimmer-dsl-fx-mac-hello-button.png](screenshots/glimmer-dsl-fx-mac-hello-button.png)
 
 ## Smart Defaults and Conventions
 
@@ -285,7 +291,9 @@ You can run the `girb` command (`bin/girb` if you cloned the project locally):
 girb
 ```
 
-![girb screenshot mac](/screenshots/glimmer-dsl-fx-mac-girb.png)
+Windows | Mac
+--------|----
+![girb screenshot windows](/screenshots/glimmer-dsl-fx-windows-girb.png) | ![girb screenshot mac](/screenshots/glimmer-dsl-fx-mac-girb.png)
 
 This gives you `irb` with the `glimmer-dsl-fx` gem loaded and the `Glimmer` module mixed into the main object for easy experimentation with GUI.
 
@@ -303,7 +311,9 @@ You may checkout the [samples](samples) directory for examples of using [Glimmer
 
 [samples/hello/hello_world.rb](/samples/hello/hello_world.rb)
 
-![hello world screenshot Mac](/screenshots/glimmer-dsl-fx-mac-hello-world.png)
+Windows | Mac
+--------|----
+![hello world screenshot windows](/screenshots/glimmer-dsl-fx-windows-hello-world.png) | ![hello world screenshot mac](/screenshots/glimmer-dsl-fx-mac-hello-world.png)
 
 Run (via installed gem):
 
@@ -335,7 +345,9 @@ app('HelloWorld', 'Glimmer') {
 
 [samples/hello/hello_button.rb](/samples/hello/hello_button.rb)
 
-![hello button screenshot](/screenshots/glimmer-dsl-fx-mac-hello-button.png)
+Windows | Mac
+--------|----
+![screenshots/glimmer-dsl-fx-windows-hello-button.png](screenshots/glimmer-dsl-fx-windows-hello-button.png) | ![screenshots/glimmer-dsl-fx-mac-hello-button.png](screenshots/glimmer-dsl-fx-mac-hello-button.png)
 
 Run (via installed gem):
 

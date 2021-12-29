@@ -32,6 +32,8 @@ GEM
     faraday-rack (1.0.0)
     fxruby (1.6.44)
       mini_portile2 (~> 2.1)
+    fxruby (1.6.44-x64-mingw32)
+      mini_portile2 (~> 2.1)
     git (1.10.0)
       rchardet (~> 1.8)
     github_api (0.19.0)
@@ -61,8 +63,9 @@ GEM
     multi_json (1.15.0)
     multi_xml (0.6.0)
     multipart-post (2.1.1)
-    nokogiri (1.12.5)
-      mini_portile2 (~> 2.6.1)
+    nokogiri (1.12.5-x64-mingw32)
+      racc (~> 1.4)
+    nokogiri (1.12.5-x86_64-darwin)
       racc (~> 1.4)
     oauth2 (1.4.7)
       faraday (>= 0.8, < 2.0)
@@ -119,6 +122,7 @@ GEM
     wisper (2.0.1)
 
 PLATFORMS
+  x64-mingw32
   x86_64-darwin-19
 
 DEPENDENCIES

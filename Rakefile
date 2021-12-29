@@ -17,7 +17,7 @@ Juwelier::Tasks.new do |gem|
   gem.homepage = "http://github.com/AndyObtiva/glimmer-dsl-fx"
   gem.license = "LGPL"
   gem.summary = %Q{Glimmer DSL for FX}
-  gem.description = %Q{Glimmer DSL for FX - FOX Toolkit Ruby Desktop Development GUI Library}
+  gem.description = %Q{Glimmer DSL for FX - FOX Toolkit Ruby Desktop Development GUI Library - Depends on fxruby binding}
   gem.email = "andy.am@gmail.com"
   gem.authors = ["Andy Maleh"]
   gem.executables = ['girb']
