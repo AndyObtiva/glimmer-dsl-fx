@@ -5,7 +5,7 @@
 
 [Glimmer](https://github.com/AndyObtiva/glimmer) DSL for [FX](http://www.fox-toolkit.org/) enables building desktop applications with the [FOX Toolkit](http://www.fox-toolkit.org/) via [FXRuby](https://github.com/larskanis/fxruby).
 
-[FOX Toolkit](http://www.fox-toolkit.org/) is the most popular cross-platform desktop GUI toolkit in [Ruby](https://www.ruby-lang.org/), having [900k+ FXRuby gem downloads](https://rubygems.org/gems/fxruby) and counting! 
+[FOX Toolkit](http://www.fox-toolkit.org/) is the most popular cross-platform desktop GUI toolkit in [MRI Ruby](https://www.ruby-lang.org), having [900k+ FXRuby gem downloads](https://rubygems.org/gems/fxruby) and counting! 
 
 [FOX Toolkit](http://www.fox-toolkit.org/)'s forte is definitely Windows where no prerequisites are needed given that [FXRuby](https://github.com/larskanis/fxruby) includes Windows binaries out of the box.
 
